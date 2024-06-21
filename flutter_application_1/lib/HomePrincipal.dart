@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/DetalleScreen.dart'; // Importa el archivo donde está definida DetalleScreen
+import 'package:flutter_application_1/citas_medicas.dart'; // Asegúrate de crear y ajustar esta importación según tu estructura de proyecto
 
 class HomePrincipal extends StatefulWidget {
-  const HomePrincipal({Key? key}) : super(key: key);
+  const HomePrincipal({super. key});
 
   @override
   State<HomePrincipal> createState() => _HomePrincipalState();
@@ -29,11 +29,12 @@ class _HomePrincipalState extends State<HomePrincipal> {
             return Center(
               child: InkWell(
                 onTap: () {
-                  Navigator.push(
-                    
-                    context,
-                    MaterialPageRoute(builder: (context) => DetalleScreen(menu[index]["titulo"])),
-                  );
+                  if (menu[index]["titulo"] == "Citas Médicas") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CitasMedicasScreen()),
+                    );
+                  } 
                 },
                 child: Container(
                   width: 100, // Ajusta el ancho según sea necesario
@@ -45,6 +46,7 @@ class _HomePrincipalState extends State<HomePrincipal> {
                       SizedBox(height: 8),
                       Text(
                         menu[index]["titulo"],
+                        
                         textAlign: TextAlign.center,
                       ),
                     ],
