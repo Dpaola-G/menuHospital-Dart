@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/citas_medicas.dart'; // Asegúrate de crear y ajustar esta importación según tu estructura de proyecto
+import 'package:flutter_application_1/citas_medicas.dart';
 
 class HomePrincipal extends StatefulWidget {
   const HomePrincipal({super. key});
